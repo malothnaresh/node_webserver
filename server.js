@@ -35,13 +35,18 @@ app.use(express.static(__dirname + '/public'));
 const welcomeMessage = "Welcome to my website";
 
 app.get('/home', (req, res) => {
-  // res.send('<h1>Hello Worlds</h1>');
-  
   res.render('home.hbs', {
     title: 'Home Page',
     welcomeMessage: welcomeMessage
   })
 
+});
+
+app.get('/', (req, res) => {
+  res.render('landing.hbs', {
+    title: 'Landing Page',
+    contents : 'Welcome to Maloth Naresh website. You\'re now at Landing area.'    
+  })
 });
 
 app.get('/about', (req, res) => {
